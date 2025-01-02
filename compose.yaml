@@ -1,0 +1,26 @@
+name: dvc-rpi-version
+services:
+  dvc-rpi-version:
+    image: hiro345g/dvc:novnc-go-202411
+    container_name: dvc-rpi-version
+    hostname: dvc-rpi-version
+    init: true
+    tty: true
+    user: node
+    working_dir: /workspace
+    networks:
+      dvc-net:
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+    environment:
+      ENV LANGUAGE: ja_JP.UTF-8
+      ENV LANG: ja_JP.UTF-8
+      ENV LC_ALL: ja_JP.UTF-8
+      EDITOR: code
+      NPM_CONFIG_USERCONFIG: ${NPM_CONFIG_USERCONFIG:-/home/node/.npmrc}
+
+networks:
+  dvc-net:
+    name: dvc-net

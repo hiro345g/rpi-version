@@ -1,0 +1,66 @@
+{
+  "name": "dvc-rpi-version",
+  "dockerComposeFile": [
+    "../compose.yaml"
+  ],
+  "service": "dvc-rpi-version",
+  "remoteUser": "node",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [
+    6080,
+    5901
+  ],
+  "portsAttributes": {
+    "6080": {
+      "label": "novnc"
+    },
+    "5901": {
+      "label": "tigervnc"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": false,
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "indentRainbow.indentSetter": {
+          "[javascript]": 2,
+          "[typescript]": 2,
+          "[ruby]": 2,
+          "[php]": 4,
+          "[python]": 4,
+          "[go]": 2
+        },
+        "[go]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": false,
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "golang.go"
+        }
+      },
+      "extensions": [
+        // ---- devcontainer feature go
+        "golang.Go",
+        // ---- dvc
+        "dbaeumer.vscode-eslint",
+        "vscode-icons-team.vscode-icons",
+        "esbenp.prettier-vscode",
+        "oderwat.indent-rainbow",
+        "eamodio.gitlens",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "christian-kohler.npm-intellisense",
+        "vscode-icons-team.vscode-icons",
+        "ms-vscode-remote.remote-containers",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode-remote.vscode-remote-extensionpack"
+      ]
+    }
+  }
+}
